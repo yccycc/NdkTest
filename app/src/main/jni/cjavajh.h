@@ -1,3 +1,0 @@
-#ifndef NDKTEST_CJAVAJH_H
-#define NDKTEST_CJAVAJH_H
-#endif

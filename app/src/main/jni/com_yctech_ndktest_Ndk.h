@@ -64,15 +64,6 @@ extern "C" {
  */
 JNIEXPORT jstring JNICALL Java_com_yctech_ndktest_Ndk_getStringFromNative
   (JNIEnv *, jobject);
-
-/*
- * Class:     com_yctech_ndktest_Ndk
- * Method:    getString_From_c
- * Signature: ()Ljava/lang/String;
- */
-JNIEXPORT jstring JNICALL Java_com_yctech_ndktest_Ndk_getString_1From_1c
-  (JNIEnv *, jobject);
-
 #ifdef __cplusplus
 }
 #endif
