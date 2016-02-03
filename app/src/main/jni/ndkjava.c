@@ -8,11 +8,17 @@ JNIEXPORT jstring JNICALL Java_com_yctech_ndktest_NdkJava_say
 JNIEXPORT jint JNICALL Java_com_yctech_ndktest_NdkJava_sayint
         (JNIEnv * env, jobject obj){
         __android_log_write(ANDROID_LOG_DEBUG,"bbbbb","in c");
-        jmethodID methodId;
         jclass mycls;
         mycls = (*env)->FindClass(env,"com/yctech/ndktest/NdkJava");
+
+        jobject mTestProvider;
+        jmethodID construction_id = (*env)->GetMethodID(env, mycls,"<init>", "()V");
+        mTestProvider = (*env)->NewObject(env, mycls,construction_id);
+
+
+        jmethodID methodId;
         methodId = (*env)->GetMethodID(env, mycls, "notNdkZaiJava","()V");
-        __android_log_write(ANDROID_LOG_DEBUG,"bbbbb",methodId);
-        //(*env)->CallVoidMethod(env, mycls, methodId);
+        __android_log_write(ANDROID_LOG_DEBUG,"bbbbb","laile");
+        (*env)->CallVoidMethod(env, mTestProvider, methodId);
         return ++i;
 }
