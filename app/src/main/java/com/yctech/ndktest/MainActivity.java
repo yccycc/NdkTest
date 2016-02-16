@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                OrdiJavaCzWithNatiMds.nativeSaySthStaticMd();
                 new Thread(){
                     @Override
                     public void run() {

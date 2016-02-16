@@ -22,3 +22,15 @@ JNIEXPORT void JNICALL Java_com_yctech_ndktest_OrdiJavaCzWithNatiMds_nativeSaySt
     methodId_other_java_clz = (*env)->GetMethodID(env, other_java_clz, "bark","()V");
     (*env)->CallVoidMethod(env, other_java_obj, methodId_other_java_clz);
 }
+JNIEXPORT void JNICALL Java_com_yctech_ndktest_OrdiJavaCzWithNatiMds_nativeSaySthStaticMd
+        (JNIEnv * env, jclass clz)
+{
+    //invoke method of class that called this native method
+    jmethodID methodId;
+    jmethodID construction_id;
+    jobject obj;
+    methodId = (*env)->GetMethodID(env, clz, "ordiJavaMdsSaySth","()V");
+    construction_id = (*env)->GetMethodID(env, clz,"<init>", "()V");
+    obj = (*env)->NewObject(env, clz,construction_id);
+    (*env)->CallVoidMethod(env, obj, methodId);
+}

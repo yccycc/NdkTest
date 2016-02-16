@@ -9,4 +9,5 @@ public class OrdiJavaCzWithNatiMds {
         System.out.println("OrdiJavaCzWithNatiMds.java--普通java方法---ordiJavaMdsSayHello---");
     }
     public native void  nativeSaySth();
+    public static native void nativeSaySthStaticMd();
 }
