@@ -7,19 +7,17 @@ import android.view.View;
 
 import java.util.Date;
 
-public class Ndk extends Activity {
-    static {
-        System.loadLibrary("sayjni");
-    }
-    public native String getStringFromNative();
+public class MainActivity extends Activity {
+//    static {
+//        System.loadLibrary("sayjni");
+//    }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ndk);
-        System.out.println(getStringFromNative());
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("bitch", new NdkJava().sayint() + "---&@");
+                new OrdiJavaCzWithNatiMds().nativeSaySth();
             }
         });
         findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
@@ -29,7 +27,6 @@ public class Ndk extends Activity {
                     @Override
                     public void run() {
                         super.run();
-                        Log.i("bitch", new NdkJava().sayint() + "---&@");
                     }
                 }.start();
             }

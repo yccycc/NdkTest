@@ -11,12 +11,12 @@
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn"
-        android:text="click--main"
+        android:text="click--main-thread"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn1"
-        android:text="click--new-thread"
+        android:text="click--not-main-thread"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>
